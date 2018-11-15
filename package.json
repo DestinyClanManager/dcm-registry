@@ -4,12 +4,23 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest --config test/unit/jest.unit.config.js --coverage",
+    "test:integration": "jest --config test/integration/jest.integration.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.215.1"
+  },
+  "devDependencies": {
+    "dotenv": "^6.1.0",
+    "jest": "^23.6.0",
+    "jest-trx-results-processor": "0.0.7",
+    "serverless": "^1.32.0",
+    "supertest": "^3.3.0",
+    "testdouble": "^3.8.2",
+    "testdouble-jest": "^2.0.0"
   }
 }
